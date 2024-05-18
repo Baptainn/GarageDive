@@ -12,9 +12,13 @@
 
 `pip install -r requirements.txt`
 
-** If you are a contributor and trying to update the `requirements.txt` file, use the following command to export your current virtual environment: **
+** 
+
+If you are a contributor and trying to update the `requirements.txt` file, use the following command to export your current virtual environment: 
 
 `pip freeze > requirements.txt`
+
+**
 
 5. TBA
 
