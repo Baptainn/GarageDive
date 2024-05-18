@@ -2,23 +2,27 @@
 
 ## Setup
 
-1. Install Python 3.12
-2. Create and load an virtual environment in Python by typing the following in a command prompt:
+Prepared for a Windows 10 SETUP
 
-`python3 -m venv local_python_environment`
-`source local_python_environment/bin/activate`
+1. Install Python 3.12
+2. Clone the repo and navigate to the folder in a command prompt.
+3. Create and load an virtual environment in Python by using the following command:
+
+`python3 -m venv venv` OR `py -m venv venv`
+
+`.\venv\Scripts\activate`
 
 4. Download and move the `requirements.txt` file into the correct location and install using the command below:
 
 `pip install -r requirements.txt`
 
-** 
+**** 
 
 If you are a contributor and trying to update the `requirements.txt` file, use the following command to export your current virtual environment: 
 
 `pip freeze > requirements.txt`
 
-**
+****
 
 5. TBA
 
