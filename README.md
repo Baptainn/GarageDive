@@ -1,9 +1,6 @@
 # GarageDive
 
 ## Setup
-
-Prepared for a Windows 10 SETUP
-
 1. Install Python 3.12
 2. Clone the repo and navigate to the folder in a command prompt.
 3. Create and load an virtual environment in Python by using the following command:
@@ -27,74 +24,32 @@ If you are a contributor and trying to update the `requirements.txt` file, use t
 5. TBA
 
 
-## Preliminary Plan
+## Inspiration
 
-plan:
+I was inspired by local garage sales in area, thinking of the logistics of people in the community trying to interact with each other, especially during the lockdowns. I was also interested in making a web application and used that inspiration with a brief thought to make GarageDive.
 
-landing page:
-describe the purpose of the application
-make an account/log in
+## What it Does
 
-once logged in: (no auth required, just collect some basic information like location and login info)
-be able to upload possible items to sell
-be able to search through other items to sell
+GarageDive is able to handle account creation, item uploads, and a sleek interface to look at all the items on the marketplace currently. It interacts with a bare-bones database that can be expanded upon in the future that holds all the relevant information for the project. Community members can make an account at anytime and communicate through email that is listed on each item in order to communicate with potential buyers!
 
+## How We Built it
 
-pages:
-landing page:
--> describes the product
--> navigation
- -> sign up/log in page
- AFTER LOG IN:
-  -> DASHBOARD: product search screen
-  -> product list screen
-  -> product creation screen
-  -> product deletion screen
--> missing page
+Using the power of a laptop I found in my basement with the base Python IDE and Notepad++, me and my team were able to whip this project out throughout Saturday.
 
-there needs to be a database that holds all of this information
+## Challenges We Ran into
 
-database -> api???
-work on making a database that can have posts and gets
+As this is our first hackathon, we weren't sure what we were really getting into. There's a lot of say, but it takes until you actually get there to experience it. From failed project ideas and planning issues to bad equipment and never working with a proper web application before, there were many challenges that we ran into along the way. However, we used these challenges as stepping stones for our own learning and to become better coders for the future!
 
-run database on local machine
-database = BIG ASS JSON FILE
-api = python class?
+## Accomplishments That We're Proud Of
 
-structures
+I'm proud that this project was able to be finished within the time limit alloted, albeit in a barebones state. I'm very proud that our team was able to learn past the hurdles along our path and make it to the end of the hackathon.
 
-PRIVATE AUTHOR:
--> name
--> email (email is unique identifer)
--> password
+## What We Learned
 
-PUBLIC AUTHOR:
--> name
--> email (hash later?)
--> location (city)
--> image?
+Everything. A better understanding of web development and the interaction of different layers that are running within a web application. My only hope in the future is to be able to learn more in this context, perhaps for a future hackathon!
 
-ITEM:
--> guid
--> name
--> PUBLIC AUTHOR email
--> PUBLIC AUTHOR location
--> price
--> image
+## What's Next?
 
-functions:
-UPLOAD ITEM
-uses item structure
+For this project, it could use some more fine-tuning. I would personally remake the database in MongoDB or something similar, attempt to dockerize the entire project and run it off a webserver (eg. Apache). There are also other features to be considered, such as account authentication and chatting with other users. Better front-end development could also be achieved by adopting a web framework, such as React.js. While this project is a mere starting point, it could go so much further!
 
-FIND ITEMS -> later on, need to split up into groups of the pointer supplied (eg. 1, 10, 100)
-uses an array of item structures
-
-CREATE AUTHOR
-uses PRIVATE AUTHOR and PUBLIC AUTHOR structure
-
-DELETE ITEM
-uses item structure
-
-BUY ITEM
--> some process in order to purchase items?
--> if interested, provide the email to communicate
+NOTE: while I didn't bother getting the domain name working, I did register the domain 'copypastewarrior.co', so I believe that deserves some credit. :)
