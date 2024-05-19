@@ -53,3 +53,5 @@ Everything. A better understanding of web development and the interaction of dif
 For this project, it could use some more fine-tuning. I would personally remake the database in MongoDB or something similar, attempt to dockerize the entire project and run it off a webserver (eg. Apache). There are also other features to be considered, such as account authentication and chatting with other users. Better front-end development could also be achieved by adopting a web framework, such as React.js. While this project is a mere starting point, it could go so much further!
 
 NOTE: while I didn't bother getting the domain name working, I did register the domain 'copypastewarrior.co', so I believe that deserves some credit. :)
+
+Presentation: https://www.youtube.com/watch?v=VuzcaymkGRs
