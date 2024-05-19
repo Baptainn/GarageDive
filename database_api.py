@@ -29,7 +29,7 @@ def upload_item(author, item_name, item_price, item_image):
 
     with open('database.json') as database:
         data = json.load(database)
-    
+        
     entry = {item_id:
         {
             "item_name": item_name,
@@ -54,11 +54,12 @@ email_match = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z
 def create_account(first, last, email, password, location, image):
     image = image or ""
 
+    if not re.fullmatch(email_match, email):  
+        raise Exception("Invalid email!")
+    
     with open('database.json') as database:
         data = json.load(database)
 
-    if not re.fullmatch(email_match, email):  
-        raise Exception("Invalid email!")
     if email in data['authors'].keys():
         raise Exception("Account already exists.")
 
@@ -77,6 +78,8 @@ def create_account(first, last, email, password, location, image):
 
     with open('database.json', 'w') as database:
         json.dump(data, database, indent=4)
+
+# SAF CREATE A FUNCTION CALLED VALIDATE_ACCOUNT WHICH TAKES AN INPUT OF EMAIL AND PASSWORD
 
 def delete_item(item_id):
     with open('database.json') as database:
