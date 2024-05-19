@@ -1,0 +1,68 @@
+{
+    "authors": {
+        "johnsmith@example.com": {
+            "first_name": "John",
+            "last_name": "Smith",
+            "password": "password",
+            "location": "Kitchener, Ontario, Canada",
+            "image": ""
+        },
+        "michaelsmith@example.com": {
+            "first_name": "Michael",
+            "last_name": "Smith",
+            "password": "password",
+            "location": "Kitchener, Ontario, Canada",
+            "image": ""
+        },
+        "sdfdfh@gmail.com": {
+            "first_name": "Michael",
+            "last_name": "Pollinsmith",
+            "password": "ss",
+            "location": "Waterloo, ON, Canada",
+            "image": ""
+        }
+    },
+    "items": {
+        "a9fb1372-b66d-43f0-9082-bd8e0d358fcf": {
+            "item_name": "Closet",
+            "item_author": "johnsmith@example.com",
+            "item_location": "Kitchener, Ontario, Canada",
+            "price": 49.99,
+            "image": ""
+        },
+        "d88cc457-8cae-4219-9cd8-590cd2ce121d": {
+            "item_name": "HawkHacks Whiteboard Marker",
+            "item_author": "johnsmith@example.com",
+            "item_location": "Kitchener, Ontario, Canada",
+            "price": 29.99,
+            "image": ""
+        },
+        "e08b66f5-754d-4797-a68c-9048036ad6d0": {
+            "item_name": "tissue box",
+            "item_author": "sdfdfh@gmail.com",
+            "item_location": "Waterloo, ON, Canada",
+            "price": 29.99,
+            "image": ""
+        },
+        "95a94ba3-3432-41ba-9848-1ebaea8b7b61": {
+            "item_name": "Smartphone",
+            "item_author": "sdfdfh@gmail.com",
+            "item_location": "Waterloo, ON, Canada",
+            "price": 2.99,
+            "image": ""
+        },
+        "ff98c3bc-0716-4ae2-b4f0-1b35967eb14b": {
+            "item_name": "Smartphone",
+            "item_author": "sdfdfh@gmail.com",
+            "item_location": "Waterloo, ON, Canada",
+            "price": 2.99,
+            "image": ""
+        "a1cc0987-a28b-4a19-9695-741d3e6ecdbb": {
+            "item_name": "Bathrobe",
+            "item_author": "sdfdfh@gmail.com",
+            "item_location": "Waterloo, ON, Canada",
+            "price": 89.99,
+            "image": ""
+        }
+    }
+}
