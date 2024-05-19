@@ -40,6 +40,9 @@ $(document).ready(function() {
             dataType: "json"
         }).done(function(response) {
             $("div[name=error]").text(response['output']);
+			if (response['output'] == null) {
+			    window.location.href = "main";
+			}
         });
 
         return false;
@@ -50,7 +53,7 @@ $(document).ready(function() {
 <body>
   <ul>
     <li><a href="main">Home</a></li>
-    <li style="float:right"><a class="active">Login</a></li>
+    <li style="float:right"><a class="active">Logged in</a></li>
     <!--<li style="float:right"><a class="active" href="signup.html">Signup</a></li>-->
 </ul>
 </body>
