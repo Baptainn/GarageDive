@@ -20,21 +20,38 @@ class Author:
         self.location = location
         self.image = image or ""
 
-def upload_item(author, item_name, item_price, item_image):
+def validate_account(email, password):
+    with open('database.json') as database:
+        data = json.load(database)
+
+    if not email in data['authors'].keys():
+        raise Exception("The email or password that you entered is incorrect.")
+
+    author = data['authors'][email]
+    if not author['password'] == password:
+        raise Exception("The email or password that you entered is incorrect.")
+
+    return True
+
+def upload_item(email, password, item_name, item_price, item_image):
     item_image = item_image or ""
     item_price = float(item_price)
     item_id = str(new_guid())
 
+    validate_account(email, password)
+    
     print(f"New item created with the id: {item_id}!")
 
     with open('database.json') as database:
         data = json.load(database)
-        
+
+    location = data['authors'][email]['location']
+    
     entry = {item_id:
         {
             "item_name": item_name,
-            "item_author": author.email,
-            "item_location": author.location,
+            "item_author": email,
+            "item_location": location,
             "price": item_price,
             "image": item_image
         }
@@ -44,11 +61,12 @@ def upload_item(author, item_name, item_price, item_image):
     with open('database.json', 'w') as database:
         json.dump(data, database, indent=4)
 
-def get_item_list(pointer):
+def get_item_list(user):
     with open('database.json') as database:
         data = json.load(database)
-    
-    return data['items']
+
+    if user == "":
+        return data['items']
 
 email_match = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 def create_account(first, last, email, password, location, image):
@@ -78,8 +96,6 @@ def create_account(first, last, email, password, location, image):
 
     with open('database.json', 'w') as database:
         json.dump(data, database, indent=4)
-
-# SAF CREATE A FUNCTION CALLED VALIDATE_ACCOUNT WHICH TAKES AN INPUT OF EMAIL AND PASSWORD
 
 def delete_item(item_id):
     with open('database.json') as database:

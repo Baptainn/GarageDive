@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in Page</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sign.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<script>
+$(document).ready(function() {
+    var re = /^\d+(\.\d{1,2})?$/;
+    $("#additem-form").submit(function(event) {
+        event.preventDefault();
+		
+		var name = $("input[name=itemname]").val();
+        var price = $("input[name=firstname]").val();
+        var email = $("input[name=email]").val();
+        var pass = $("input[name=psw]").val();
+
+        $("div[name=error]").text(""); // Clear any previous error message
+        
+		if (!re.test(price)) {
+		    $("div[name=error]").text("Bad price.");
+            return false;
+		}
+		
+        $.ajax({
+            url: "/create-item",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({
+			    name: name,
+                price: price,
+                email: email,
+                pass: pass
+            }),
+            dataType: "json"
+        }).done(function(response) {
+            $("div[name=error]").text(response['output']);
+        });
+
+        return false;
+    });
+});
+</script>
+
+<body>
+  <ul>
+    <li><a href="main">Home</a></li>
+    <li style="float:right"><a class="active">Login</a></li>
+    <!--<li style="float:right"><a class="active" href="signup.html">Signup</a></li>-->
+</ul>
+</body>
+<img class = "logo" src="{{ url_for('static', filename='images/logo.jpg') }}">
+<form id="additem-form" style="border:1px solid #ccc">
+    <div class="container">
+      <h1>Add an Item</h1>
+      <p>Please fill in this form to create a post.</p>
+	  
+	  <input class = "searchbars" type="text" placeholder="Name" name="itemname" required>
+      <p class="gap"></p>
+      <input class = "searchbars" type="text" placeholder="Price" name="firstname" required>
+      <p class="gap"></p>
+      <input class = "searchbars" type="text" placeholder="Enter Email" name="email" required>
+      <p class="gap"></p>
+      <input class = "searchbars" type="password" placeholder="Enter Password" name="psw" required>
+      <p class="gap"></p>
+      <!--<input class = "searchbars" type="file" placeholder="image" name="image" required>-->
+      <p class="gap"></p>
+      <div class="clearfix">
+        <button type="button" class="cancelbtn"><b>Cancel</b></button>
+        <button type="submit" class="signupbtn"><b>Submit</b></button>
+      </div>
+	  <div name="error" style="color: red;"></div>
+    </div>
+  </form>
+</html>
